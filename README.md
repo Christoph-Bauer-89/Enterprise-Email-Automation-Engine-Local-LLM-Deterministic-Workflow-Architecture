@@ -56,7 +56,7 @@ Liest neu eingehende Mails automatisch aus und übergibt die Plaintext- und HTML
 ### B. Code Node (JavaScript Deterministic Matching)
 Der JS-Knoten prüft den E-Mail-Inhalt auf kunden- und supportrelevante Trigger-Begriffe (Fallback-Mechanismen über `textPlain`, `textHtml` und `text` inklusive).
 
-![JavaScript Code Logic](javascript-code-node-logic.png)
+![JavaScript Code Logic](Docs/javascript-code-node-logic.png)
 
 ### C. Basic LLM Chain (Ollama / Llama 3 8B)
 Verwendet den dynamisch übergebenen `emailText`, um maßgeschneiderte Antworten zu verfassen.
