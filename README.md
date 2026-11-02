@@ -27,7 +27,7 @@
 * **Integrationen:** Gmail API / IMAP Trigger
 * **Logik:** JavaScript (ES6 Code Nodes)
 
-![Docker Setup](n8n-docker-container-status.png)
+![Docker Setup](Docs/n8n-docker-container-status.png)
 
 ### 💡 Warum diese Architektur für Unternehmen entscheidend ist (Business Relevance)
 1. **Privacy-First LLM Processing:** Sämtliche Texterkennungs- und Generierungs-Schritte laufen zu 100 % lokal über Ollama. Es fließen keine E-Mail-Inhalte oder sensitive Daten an externe LLM-APIs (wie OpenAI oder Anthropic).
@@ -44,7 +44,7 @@ Ein zentrales Learning des Projekts war der Wechsel von einer rein KI-basierten 
 * **Die Challenge:** Kleine lokale LLMs (wie Llama 3 8B) verfallen bei starren Formatvorgaben gelegentlich in Metasprache (*"Ich habe den Text analysiert..."*). Das führt zu Unschärfen bei harten Weichenstellungen.
 * **Die Lösung:** Die primäre Weichenstellung übernimmt ein deterministischer JavaScript-Code (100 % Fehlerfreiheit). Das LLM wird exklusiv für seine Stärke eingesetzt: Das Erfassen von Kontext und das Generieren hochprofessioneller Antworttexte.
 
-![Workflow Architecture](n8n-workflow-pipeline.png)
+![Workflow Architecture](Docs/n8n-workflow-pipeline.png)
 
 ---
 
@@ -65,7 +65,7 @@ Verwendet den dynamisch übergebenen `emailText`, um maßgeschneiderte Antworten
 * **Data Consistency:** Der If-Knoten greift explizit auf das Ergebnis des Code-Knotens zurück (`$('Code in JavaScript').item.json.isCustomer`), um den Datenstrom absolut stabil zu halten.
 * **Human-in-the-Loop Pattern:** Mails werden nicht blind automatisiert verschickt, sondern als Entwurf (Draft) in Gmail gespeichert. Ein menschlicher Mitarbeiter prüft die KI-Antwort vor dem finalen Versand.
 
-![Gmail Draft Result](gmail-draft-result-preview.png)
+![Gmail Draft Result](Docs/gmail-draft-result-preview.png)
 
 ---
 
